@@ -18,6 +18,8 @@ void CObjHero::Init()
 	m_vx = 0.0f;        //移動ベクトル
 	m_vy = 0.0f;
 	m_posture = 1.0f;   //右向き0.0f　左向き1.0f
+	m_b = 0.0f;         //泡を出す
+	m_w = 0.0f;         //水を出す
 
 	m_ani_time = 0;
 	m_ani_frame = 1;     //静止フレームを初期にする
@@ -52,8 +54,17 @@ void CObjHero::Action()
 		}
 	}
 
-	
+	//Cキー入力で泡発射
+	if (Input::GetVKey('C') == true)
+	{
+		m_b = 128.0f;
+	}
 
+	//Vキー入力で水発射
+	if (Input::GetVKey('V') == true)
+	{
+		m_w = 128.0f;
+	}
 
 	//キーの入力方向
 	if (Input::GetVKey(VK_RIGHT) == true)
