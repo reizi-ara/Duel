@@ -11,7 +11,7 @@ class CObjBlock :public CObj
 {
 
 public:
-	CObjBlock(int map[10][100]);
+	CObjBlock(int map[10][20]);
 	~CObjBlock() {};
 	void Init();
 	void Action();
@@ -26,25 +26,15 @@ public:
 	float m_y;
 
 
-
-	void SetScroll(float s) { m_scroll = s; }
-	float GetScroll() { return m_scroll; }
-
 	//ブロックとの当たり判定
 	void BlockHit(
-		float* x, float* y, bool scroll_on,
+		float* x, float* y,
 		bool* up, bool* down, bool* left, bool* right,
 		float* vx, float* vy, int* bt
 	);
 
-	//ブロックとの当たり判定
-	void BlockHit(
-		float x, float y, float vx, float vy,
-		float* out_px, float* out_py, float* out_len
-	);
-
 	void BlockBulletHit(
-		float* x, float* y, bool scroll_on, float* m_sx, float* m_sy,
+		float* x, float* y,  float* m_sx, float* m_sy,
 		bool* up, bool* down, bool* left, bool* right,
 		float* vx, float* vy, int* bt
 	);
@@ -59,12 +49,10 @@ private:
 
 	void BlockDraw(float x, float y, RECT_F* dst, float c[]);
 
-	int m_map[10][100];
+	int m_map[10][20];
 
-	float m_scroll;
-
-	float Dot(float ax, float ay, float bx, float by);
-	float Cross(float ax, float ay, float bx, float by);
+	float Dot(float ax, float ay, float bx, float by);//内積
+	float Cross(float ax, float ay, float bx, float by);//外積
 
 	//線と線と交差判定
 	bool LineCrossPoint(

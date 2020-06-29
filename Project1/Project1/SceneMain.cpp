@@ -3,6 +3,7 @@
 #define _HAS_ITERATOR_DEBUGGING (0)
 
 //GameLde使用するヘッダー
+#include "GameL/UserData.h"
 #include"GameL\DrawTexture.h"
 #include"GameL\SceneObjManager.h"
 
@@ -28,6 +29,36 @@ CSceneMain::~CSceneMain()
 //ゲームメイン初期化メソッド
 void CSceneMain::InitScene()
 {
+	
+	//外部データの読み取り（ステージ情報）
+	unique_ptr<wchar_t>p;//ステージ情報ポインター
+	int size;//ステージ情報の大きさ
+	p = Save::ExternalDataOpen(L"stage1.csv", &size);//外部データ読み込み
+
+	int map[10][20];
+	int count = 1;
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+			int w = 0;
+			swscanf_s(&p.get()[count], L"%d", &w);
+
+			map[i][j] = w;
+
+			if (w >= 10)
+			{
+				count += 3;
+
+			}
+			else
+			{
+				count += 2;
+			}
+		}
+	}
+	
+
 	//グラフィック読み込み
 	Draw::LoadImage(L"image.png", 0, TEX_SIZE_512);
 /*

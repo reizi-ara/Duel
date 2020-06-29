@@ -13,10 +13,10 @@ using namespace GameL;
 
 //extern float m_hp;
 
-CObjBlock::CObjBlock(int map[10][100])
+CObjBlock::CObjBlock(int map[10][20])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int) * (10 * 100));
+	memcpy(m_map, map, sizeof(int) * (10 * 20));
 }
 
 //イニシャライズ
@@ -24,7 +24,7 @@ void CObjBlock::Init()
 {
 
 
-	m_scroll = 0.0f;
+	
 }
 
 //アクション
@@ -60,17 +60,16 @@ void CObjBlock::Draw()
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 
-
 	//マップチップによるblock設置
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 20; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
 				dst.m_top = i * 64.0f;
-				dst.m_left = j * 64.0f + m_scroll;
+				dst.m_left = j * 64.0f;
 				dst.m_right = dst.m_left + 64.0f;
 				dst.m_bottom = dst.m_top + 64.0f;
 
@@ -89,9 +88,7 @@ void CObjBlock::Draw()
 				{
 					//泡
 
-					//アイスブロックの描画
-					BlockDraw(320.0f + 64.0f, 0.0f, &dst, c);
-					Draw::Draw(15, &src, &dst, c, 0.0f);
+					;
 
 				}
 
@@ -99,16 +96,10 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 3)
 				{
 					//泡アイテム
+					;
+					
 
-					/*src.m_top = 0.0f;
-					src.m_left = 600.0f+64.0f;
-					src.m_right = src.m_left + 64.0f;
-					src.m_bottom = src.m_top+64.0f;*/
-
-					//Scene::SetScene(new SceneBossStage());
-
-					BlockDraw(600.0f, 0.0f, &dst, c);
-					Draw::Draw(11, &src, &dst, c, 0.0f);
+					
 				}
 
 				if (m_map[i][j] == 4)
@@ -154,6 +145,7 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F* dst, float c[])
 	src.m_bottom = src.m_top + 64.0f;
 
 }
+
 // BlockHit関数
 //引数1  float* x          :判定を行うobjectのX位置
 //引数2  float* y          :判定を行うobjectのY位置
@@ -168,11 +160,10 @@ void CObjBlock::BlockDraw(float x, float y, RECT_F* dst, float c[])
 //判定を行うobjectとブロック64×64限定で、当たり判定と上下左右判定を行う
 //その結果は引数4～10に返す
 void CObjBlock::BlockHit(
-	float* x, float* y, bool scroll_on,
+	float* x, float* y,
 	bool* up, bool* down, bool* left, bool* right,
 	float* vx, float* vy, int* bt
 )
-
 {
 	//衝突確認用フラグの初期化
 	*up = false;
@@ -188,7 +179,7 @@ void CObjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 20; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
@@ -196,19 +187,20 @@ void CObjBlock::BlockHit(
 				float bx = j * 64.0f;
 				float by = i * 64.0f;
 
-				//スクロールの影響
-				float scroll = scroll_on ? m_scroll : 0;
+				
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scroll) + 64.0f > bx) && (*x + (-scroll) < bx + 64.0f) && (*y + 64.0f > by) && (*y < by + 64.0f))
+				if ((*x  + 64.0f > bx) && (*x  < bx + 64.0f) && (*y + 64.0f > by) && (*y < by + 64.0f))
 				{
 					//上下左右判定
 
 					//vectorの作成
-					float rvx = (*x + (-scroll)) - bx;
+					float rvx = *x  - bx;
 					float rvy = *y - by;
+
 					//長さを求める
 					float len = sqrt(rvx * rvx + rvy * rvy);
+
 					//角度を求める
 					float r = atan2(rvy, rvx);
 					r = r * 180.0f / 3.14f;
@@ -226,7 +218,7 @@ void CObjBlock::BlockHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64.0f + (scroll);
+							*x = bx + 64.0f ;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 45 && r < 135)
@@ -237,10 +229,7 @@ void CObjBlock::BlockHit(
 							//種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] == 3)//ゴールブロック
 								*bt = m_map[i][j];
-							else if (m_map[i][j] == 2)//アイスブロック
-								*bt = m_map[i][j];
-							else if (m_map[i][j] == 5)//ダメージブロック
-								*bt = m_map[i][j];
+							
 							*vy = 0.0f;
 
 
@@ -249,14 +238,14 @@ void CObjBlock::BlockHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64.0f + (scroll);
+							*x = bx - 64.0f ;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y + 64.0f;
+							*y=by + 64.0f;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
@@ -268,8 +257,9 @@ void CObjBlock::BlockHit(
 		}
 	}
 }
+
 void CObjBlock::BlockBulletHit(
-	float* x, float* y, bool scroll_on, float* m_sx, float* m_sy,
+	float* x, float* y,  float* m_sx, float* m_sy,
 	bool* up, bool* down, bool* left, bool* right,
 	float* vx, float* vy, int* bt
 )
@@ -284,7 +274,7 @@ void CObjBlock::BlockBulletHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 20; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
@@ -292,19 +282,20 @@ void CObjBlock::BlockBulletHit(
 				float bx = j * 64.0f;
 				float by = i * 64.0f;
 
-				//スクロールの影響
-				float scroll = scroll_on ? m_scroll : 0;
+				
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scroll) + 14 > bx) && (*x + (-scroll) < bx + 64) && (*y + 22 > by) && (*y < by + 64))
+				if ((*x  + 14 > bx) && (*x  < bx + 64) && (*y + 22 > by) && (*y < by + 64))
 				{
 					//上下左右判定
 
 					//vectorの作成
-					float rvx = (*x + (-scroll)) - bx;
+					float rvx = *x - bx;
 					float rvy = *y - by;
+
 					//長さを求める
-					float len = sqrt(rvx * rvx + rvy * rvy);
+					float len = sqrt(rvx*rvx + rvy * rvy);
+
 					//角度を求める
 					float r = atan2(rvy, rvx);
 					r = r * 180.0f / 3.14f;
@@ -322,7 +313,7 @@ void CObjBlock::BlockBulletHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64 + (scroll);
+							*x = bx + 64 ;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 45 && r < 135)
@@ -337,14 +328,14 @@ void CObjBlock::BlockBulletHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64 + (scroll);
+							*x = bx - 64 ;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y + 64;
+							*y=by + 64;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
@@ -459,7 +450,7 @@ bool CObjBlock::HeroBlockCrossPoint(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
