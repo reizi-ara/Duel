@@ -42,8 +42,10 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-	//移動ベクトルの破棄
-	m_vy = 0.0f;
+	//主人公の位置を取得
+	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	float hx = hero->GetX();
+	float hy = hero->GetY();
 
 	//Xキー入力でジャンプ
 	if (Input::GetVKey('X') == true)
@@ -57,13 +59,13 @@ void CObjHero::Action()
 	//Cキー入力で泡発射
 	if (Input::GetVKey('C') == true)
 	{
-		m_b = 128.0f;
+		
 	}
 
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)
 	{
-		m_w = 128.0f;
+		
 	}
 
 	//キーの入力方向
@@ -106,6 +108,69 @@ void CObjHero::Action()
 	//自身のHitBoxを持ってくる
 	CHitBox* hit = Hits::GetHitBox(this);
 	
+	//主人公の位置X(m_px)+主人公機の幅分+X軸方向に領域外を認識
+	if (m_px + 32.0f > 800.0f)
+	{
+		m_px = 800.0f - 32.0f;
+	}
+
+	/*if (m_map[i][j] > 0)
+	{
+		//要素番号を座標に変更
+		float x = j * 64.0f;
+		float y = i * 64.0f;
+
+		if ((hx + 64.0f > x) && (hx < x + 64.0f) && (hy + 64.0f > y) && (hy < y + 64.0f))
+		{
+		//上下左右判定
+
+		//vectorの作成
+		float vx = hx -x;
+		float vy = hy -y;
+
+		//長さを求める
+		float len = sqrt(vx*vx + vy*vyy);
+
+		//角度を求める
+		float r = atan22(vy,vx);
+		r = r *180.0f / 3.14f;
+
+		if(r <= 0.0f)
+		r = abs(r);
+
+		else
+		r = 360.0f-abs(r);
+
+		//角度で上下左右を判定
+		if((r<45 && r>0) || r>315)
+		{
+		//右
+		}
+
+		if(r>45 && 135)
+		{
+		//上
+		hero->SetY(y-64.0f);//ブロックの位置・主人公の幅
+		hero->SetVY(0.0f);
+		}
+
+		if(r>135 && 225)
+		{
+		//左
+		}
+
+		if(r>225 && r<315)
+		{
+		//下
+		}
+
+		//当たっている場合
+		hero->SetX(hx);
+		hero->SetY(0.0f);
+		hero->SetVY(0.0f);
+		}
+	}*/
+
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
