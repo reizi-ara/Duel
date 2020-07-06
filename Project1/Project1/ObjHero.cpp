@@ -114,68 +114,21 @@ void CObjHero::Action()
 		m_px = 800.0f - 32.0f;
 	}
 
-	/*if (m_map[i][j] > 0)
-	{
-		//要素番号を座標に変更
-		float x = j * 64.0f;
-		float y = i * 64.0f;
+	//ブロックとの当たり判定実行
+	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pb->BlockHit(&m_px, &m_py,
+		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+		&m_block_type);
 
-		if ((hx + 64.0f > x) && (hx < x + 64.0f) && (hy + 64.0f > y) && (hy < y + 64.0f))
-		{
-		//上下左右判定
-
-		//vectorの作成
-		float vx = hx -x;
-		float vy = hy -y;
-
-		//長さを求める
-		float len = sqrt(vx*vx + vy*vyy);
-
-		//角度を求める
-		float r = atan22(vy,vx);
-		r = r *180.0f / 3.14f;
-
-		if(r <= 0.0f)
-		r = abs(r);
-
-		else
-		r = 360.0f-abs(r);
-
-		//角度で上下左右を判定
-		if((r<45 && r>0) || r>315)
-		{
-		//右
-		}
-
-		if(r>45 && 135)
-		{
-		//上
-		hero->SetY(y-64.0f);//ブロックの位置・主人公の幅
-		hero->SetVY(0.0f);
-		}
-
-		if(r>135 && 225)
-		{
-		//左
-		}
-
-		if(r>225 && r<315)
-		{
-		//下
-		}
-
-		//当たっている場合
-		hero->SetX(hx);
-		hero->SetY(0.0f);
-		hero->SetVY(0.0f);
-		}
-	}*/
+	//ブロック情報を持ってくる
+	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
 
 	//HiitBoxの位置の変更
+	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px, m_py);
 }
 
