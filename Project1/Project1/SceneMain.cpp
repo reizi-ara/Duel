@@ -33,7 +33,7 @@ void CSceneMain::InitScene()
 	//外部データの読み取り（ステージ情報）
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;//ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"stage1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"test.csv", &size);//外部データ読み込み
 
 	int map[10][20];
 	int count = 1;
@@ -49,7 +49,6 @@ void CSceneMain::InitScene()
 			if (w >= 10)
 			{
 				count += 3;
-
 			}
 			else
 			{

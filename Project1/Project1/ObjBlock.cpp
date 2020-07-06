@@ -75,6 +75,7 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 1)
 				{
+					//泡
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
 					src.m_right = src.m_left + 64.0f;
@@ -86,7 +87,7 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 2)
 				{
-					//泡
+					//泡アイテム
 
 					;
 
@@ -95,7 +96,7 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 3)
 				{
-					//泡アイテム
+					//水アイテム
 					;
 					
 
@@ -104,23 +105,23 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 4)
 				{
-					//水アイテム
+					//障害物用の泡
 					;
 				}
 				if (m_map[i][j] == 5)
 				{
-					//障害物用の泡
+					//ゴールブロック
 					;
 				}
 
 				if (m_map[i][j] == 6)
 				{
-					//今のところなし
+					
 					;
 				}
 				if (m_map[i][j] == 7)
 				{
-					//ゴールブロック
+					
 					;
 				}
 				
