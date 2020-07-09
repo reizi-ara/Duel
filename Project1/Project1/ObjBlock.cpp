@@ -48,15 +48,19 @@ void CObjBlock::Draw()
 	RECT_F src; //ï`âÊå≥êÿÇËéÊÇËà íu
 	RECT_F dst; //ï`âÊêÊï\é¶à íu
 
+	/*
 	//îwåiï\é¶
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 739.0f;
 	src.m_bottom = 415.0f;
+
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
+	*/
+
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 
@@ -75,6 +79,7 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 1)
 				{
+					/*
 					//ñA
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
@@ -83,6 +88,7 @@ void CObjBlock::Draw()
 					BlockDraw(320.0f, 0.0f, &dst, c);
 					//ï`âÊ
 					Draw::Draw(10, &src, &dst, c, 0.0f);
+					*/
 				}
 
 				if (m_map[i][j] == 2)
