@@ -103,10 +103,7 @@ void CObjHero::Action()
 	m_vx += -(m_vx * 0.098);
 
 	//自由落下運動
-	m_vy += 9.8 / (16.0f);	
-
-	//自身のHitBoxを持ってくる
-	CHitBox* hit = Hits::GetHitBox(this);
+	m_vy += 9.8 / (16.0f);
 	
 	//主人公の位置X(m_px)+主人公機の幅分+X軸方向に領域外を認識
 	if (m_px + 32.0f > 800.0f)
