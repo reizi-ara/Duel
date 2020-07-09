@@ -59,15 +59,17 @@ void CSceneMain::InitScene()
 	
 
 	//グラフィック読み込み
-	Draw::LoadImage(L"image.png", 0, TEX_SIZE_512);
+	//Draw::LoadImage(L"image.png", 0, TEX_SIZE_256);
+
+	Draw::LoadImage(L"仮主人公.png", 0, TEX_SIZE_256);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1); //作ったオブジェクトをオブジェクトマネージャーに登録
 
 	//blockオブジェクト作成
-	/*CObjBlock* objb = new CObjBlock();
-	Objs::InsertObj(objb, OBJ_BLOCK, 9);*/
+	CObjBlock* objb = new CObjBlock(map);
+	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 }
 
 //ゲームメイン実行化メソッド
