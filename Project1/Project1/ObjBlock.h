@@ -11,7 +11,7 @@ class CObjBlock :public CObj
 {
 
 public:
-	CObjBlock(int map[10][20]);
+	CObjBlock(int map[20][20]);
 	~CObjBlock() {};
 	void Init();
 	void Action();
@@ -49,7 +49,7 @@ private:
 
 	void BlockDraw(float x, float y, RECT_F* dst, float c[]);
 
-	int m_map[10][20];
+	int m_map[20][20];
 
 	float Dot(float ax, float ay, float bx, float by);//ì‡êœ
 	float Cross(float ax, float ay, float bx, float by);//äOêœ

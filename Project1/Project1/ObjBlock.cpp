@@ -13,10 +13,10 @@ using namespace GameL;
 
 //extern float m_hp;
 
-CObjBlock::CObjBlock(int map[10][20])
+CObjBlock::CObjBlock(int map[20][20])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int) * (10 * 20));
+	memcpy(m_map, map, sizeof(int) * (20 * 20));
 }
 
 //イニシャライズ
@@ -65,17 +65,17 @@ void CObjBlock::Draw()
 
 
 	//マップチップによるblock設置
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
 				//表示位置の設定
-				dst.m_top = i * 64.0f;
-				dst.m_left = j * 64.0f;
-				dst.m_right = dst.m_left + 64.0f;
-				dst.m_bottom = dst.m_top + 64.0f;
+				dst.m_top = i * 32.0f;
+				dst.m_left = j * 32.0f;
+				dst.m_right = dst.m_left + 32.0f;
+				dst.m_bottom = dst.m_top + 32.0f;
 
 				if (m_map[i][j] == 1)
 				{
@@ -184,7 +184,7 @@ void CObjBlock::BlockHit(
 	*bt = 0;
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)
 		{
@@ -279,7 +279,7 @@ void CObjBlock::BlockBulletHit(
 
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 20; j++)
 		{
@@ -455,9 +455,9 @@ bool CObjBlock::HeroBlockCrossPoint(
 	};
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 20; i++)
 	{
-		for (int j = 0; j < 200; j++)
+		for (int j = 0; j < 20; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
