@@ -63,6 +63,8 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_256);
 
+	Draw::LoadImage(L"Stage1.png", 1, TEX_SIZE_512);
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1); //作ったオブジェクトをオブジェクトマネージャーに登録
@@ -70,6 +72,10 @@ void CSceneMain::InitScene()
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
+
+	//背景オブジェクト作成
+	CObjBackground* back = new CObjBackground();
+	Objs::InsertObj(back, OBJ_BACKGROUND, 1);
 }
 
 //ゲームメイン実行化メソッド
