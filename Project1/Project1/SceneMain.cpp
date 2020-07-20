@@ -59,7 +59,7 @@ void CSceneMain::InitScene()
 	
 
 	//グラフィック読み込み
-	//Draw::LoadImage(L"image.png", 0, TEX_SIZE_256);
+	Draw::LoadImage(L"image.png", 10, TEX_SIZE_512);
 
 
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_256);

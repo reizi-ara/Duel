@@ -79,7 +79,7 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 1)
 				{
-					/*
+					
 					//–A
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
@@ -88,7 +88,7 @@ void CObjBlock::Draw()
 					BlockDraw(320.0f, 0.0f, &dst, c);
 					//•`‰æ
 					Draw::Draw(10, &src, &dst, c, 0.0f);
-					*/
+					
 				}
 
 				if (m_map[i][j] == 2)
