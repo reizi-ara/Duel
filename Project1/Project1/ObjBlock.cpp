@@ -24,17 +24,17 @@ void CObjBlock::Init()
 {
 
 
-	
+
 }
 
 //アクション
 void CObjBlock::Action()
 {
 
-	
 
-	
-	
+
+
+
 
 }
 
@@ -104,9 +104,9 @@ void CObjBlock::Draw()
 				{
 					//水アイテム
 					;
-					
 
-					
+
+
 				}
 
 				if (m_map[i][j] == 4)
@@ -122,15 +122,15 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 6)
 				{
-					
+
 					;
 				}
 				if (m_map[i][j] == 7)
 				{
-					
+
 					;
 				}
-				
+
 			}
 		}
 	}
@@ -194,15 +194,15 @@ void CObjBlock::BlockHit(
 				float bx = j * 64.0f;
 				float by = i * 64.0f;
 
-				
+
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x  + 64.0f > bx) && (*x  < bx + 64.0f) && (*y + 64.0f > by) && (*y < by + 64.0f))
+				if ((*x + 64.0f > bx) && (*x < bx + 64.0f) && (*y + 64.0f > by) && (*y < by + 64.0f))
 				{
 					//上下左右判定
 
 					//vectorの作成
-					float rvx = *x  - bx;
+					float rvx = *x - bx;
 					float rvy = *y - by;
 
 					//長さを求める
@@ -225,7 +225,7 @@ void CObjBlock::BlockHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64.0f ;
+							*x = bx + 64.0f;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 45 && r < 135)
@@ -236,7 +236,7 @@ void CObjBlock::BlockHit(
 							//種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] == 3)//ゴールブロック
 								*bt = m_map[i][j];
-							
+
 							*vy = 0.0f;
 
 
@@ -245,14 +245,14 @@ void CObjBlock::BlockHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64.0f ;
+							*x = bx - 64.0f;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y=by + 64.0f;
+							*y = by + 64.0f;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
@@ -266,7 +266,7 @@ void CObjBlock::BlockHit(
 }
 
 void CObjBlock::BlockBulletHit(
-	float* x, float* y,  float* m_sx, float* m_sy,
+	float* x, float* y, float* m_sx, float* m_sy,
 	bool* up, bool* down, bool* left, bool* right,
 	float* vx, float* vy, int* bt
 )
@@ -289,10 +289,10 @@ void CObjBlock::BlockBulletHit(
 				float bx = j * 64.0f;
 				float by = i * 64.0f;
 
-				
+
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x  + 14 > bx) && (*x  < bx + 64) && (*y + 22 > by) && (*y < by + 64))
+				if ((*x + 14 > bx) && (*x < bx + 64) && (*y + 22 > by) && (*y < by + 64))
 				{
 					//上下左右判定
 
@@ -301,7 +301,7 @@ void CObjBlock::BlockBulletHit(
 					float rvy = *y - by;
 
 					//長さを求める
-					float len = sqrt(rvx*rvx + rvy * rvy);
+					float len = sqrt(rvx * rvx + rvy * rvy);
 
 					//角度を求める
 					float r = atan2(rvy, rvx);
@@ -320,7 +320,7 @@ void CObjBlock::BlockBulletHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64 ;
+							*x = bx + 64;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 45 && r < 135)
@@ -335,14 +335,14 @@ void CObjBlock::BlockBulletHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64 ;
+							*x = bx - 64;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y=by + 64;
+							*y = by + 64;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;

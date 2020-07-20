@@ -48,7 +48,7 @@ void CObjHero::Action()
 	float hy = hero->GetY();
 
 	//Xキー入力でジャンプ
-	if (Input::GetVKey('X') == true)
+	if (Input::GetVKey(' ') == true)
 	{
 		if (m_hit_down == true)
 		{
