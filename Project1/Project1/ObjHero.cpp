@@ -52,7 +52,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true)
 		{
-			m_vy = -20;
+			m_vy = -15;
 		}
 	}
 
@@ -145,9 +145,9 @@ void CObjHero::Draw()
 
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
-	src.m_left = 0.0f + AniData[m_ani_frame] * 64;
-	src.m_right = 64.0f + AniData[m_ani_frame] * 64;
-	src.m_bottom = 64.0f;
+	src.m_left = 0.0f ;
+	src.m_right = 256.0f;
+	src.m_bottom = 256.0f;
 
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = 0.0f + m_py;
