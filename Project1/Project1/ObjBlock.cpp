@@ -191,13 +191,13 @@ void CObjBlock::BlockHit(
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
 				//要素番号を座標に変更
-				float bx = j * 64.0f;
-				float by = i * 64.0f;
+				float bx = j * 32.0f;
+				float by = i * 32.0f;
 
 
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + 64.0f > bx) && (*x < bx + 64.0f) && (*y + 64.0f > by) && (*y < by + 64.0f))
+				if ((*x + 32.0f > bx) && (*x < bx + 32.0f) && (*y + 32.0f > by) && (*y < by + 32.0f))
 				{
 					//上下左右判定
 
@@ -225,14 +225,14 @@ void CObjBlock::BlockHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64.0f;
+							*x = bx + 32.0f;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
 							*down = true;
-							*y = by - 64.0f;
+							*y = by - 32.0f;
 							//種類を渡すのスタートとゴールのみ変更する
 							if (m_map[i][j] == 3)//ゴールブロック
 								*bt = m_map[i][j];
@@ -245,14 +245,14 @@ void CObjBlock::BlockHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64.0f;
+							*x = bx - 32.0f;
 							*vx = -(*vx) * 0.5f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y = by + 64.0f;
+							*y = by + 32.0f;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
@@ -286,13 +286,13 @@ void CObjBlock::BlockBulletHit(
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
 				//要素番号を座標に変更
-				float bx = j * 64.0f;
-				float by = i * 64.0f;
+				float bx = j * 32.0f;
+				float by = i * 32.0f;
 
 
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + 14 > bx) && (*x < bx + 64) && (*y + 22 > by) && (*y < by + 64))
+				if ((*x + 7 > bx) && (*x < bx + 32) && (*y + 11 > by) && (*y < by + 32))
 				{
 					//上下左右判定
 
@@ -320,14 +320,14 @@ void CObjBlock::BlockBulletHit(
 						{
 							//右
 							*right = true;
-							*x = bx + 64;
+							*x = bx + 32;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
 							*down = true;
-							*y = by - 64;
+							*y = by - 32;
 							//種類を渡すのスタートとゴールのみ変更する
 							*vy = 0.0f;
 						}
@@ -335,14 +335,14 @@ void CObjBlock::BlockBulletHit(
 						{
 							//左
 							*left = true;
-							*x = bx - 64;
+							*x = bx - 32;
 							*vx = -(*vx) * 0.1f;
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							*up = true;
-							*y = by + 64;
+							*y = by + 32;
 							if (*vy < 0)
 							{
 								*vy = 0.0f;
