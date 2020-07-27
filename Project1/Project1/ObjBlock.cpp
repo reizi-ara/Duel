@@ -93,17 +93,30 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 2)
 				{
-					//泡アイテム
+					//水生成アイテム
+					src.m_top = 0.0f;
+					src.m_left = 64.0f;
+					src.m_right = src.m_left + 64.0f;
+					src.m_bottom = src.m_top + 64.0f;
+					BlockDraw(320.0f, 0.0f, &dst, c);
 
-					;
+					//描画
+					Draw::Draw(2, &src, &dst, c, 0.0f);
 
 				}
 
 
 				if (m_map[i][j] == 3)
 				{
-					//水アイテム
-					;
+					//泡生成アイテム
+					src.m_top = 0.0f;
+					src.m_left = 64.0f;
+					src.m_right = src.m_left + 64.0f;
+					src.m_bottom = src.m_top + 64.0f;
+					BlockDraw(320.0f, 0.0f, &dst, c);
+
+					//描画
+					Draw::Draw(3, &src, &dst, c, 0.0f);
 
 
 

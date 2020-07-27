@@ -66,6 +66,10 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"Stage1.png", 1, TEX_SIZE_512);
 
+	Draw::LoadImage(L"WaterItem.png", 2, TEX_SIZE_64);//水生成アイテム
+
+	Draw::LoadImage(L"BubbleItem.png", 3, TEX_SIZE_64);//生成アイテム
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1); //作ったオブジェクトをオブジェクトマネージャーに登録

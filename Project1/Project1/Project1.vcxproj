@@ -139,7 +139,9 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
+    <ClCompile Include="ObjBubbleItem.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjWaterItem.cpp" />
     <ClCompile Include="SceneMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,7 +160,9 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="ObjBubbleItem.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjWaterItem.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
