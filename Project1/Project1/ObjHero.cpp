@@ -127,6 +127,12 @@ void CObjHero::Action()
 	//HiitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px, m_py);
+
+	if (m_py > 1000.0f) 
+	{
+		//場外に出たらリスタート
+		Scene::SetScene(new CSceneMain());
+	}
 }
 
 //ドロー
