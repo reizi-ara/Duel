@@ -70,6 +70,8 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"BubbleItem.png", 3, TEX_SIZE_64);//生成アイテム
 
+	Draw::LoadImage(L"GoalBlock.png", 4, TEX_SIZE_64);//ゴールブロック
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1); //作ったオブジェクトをオブジェクトマネージャーに登録

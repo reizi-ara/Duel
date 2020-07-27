@@ -129,7 +129,10 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 5)
 				{
 					//ゴールブロック
-					;
+					BlockDraw(320.0f, 0.0f, &dst, c);
+
+					//描画
+					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
 
 				if (m_map[i][j] == 6)
