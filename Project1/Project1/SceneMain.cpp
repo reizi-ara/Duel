@@ -62,7 +62,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"image.png", 10, TEX_SIZE_512);
 
 
-	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_256);
+	Draw::LoadImage(L"fallenAngel1.png", 0, TEX_SIZE_256);
 
 	Draw::LoadImage(L"Stage1.png", 1, TEX_SIZE_512);
 

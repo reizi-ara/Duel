@@ -12,9 +12,13 @@ class CObjWaterItem :public CObj
 public:
 	CObjWaterItem(float x, float y);
 	~CObjWaterItem() {};
+	float GetVY() { return m_iy; }
+	float GetVX() { return m_ix; }
 	void Init();	 //イニシャライズ
 	void Action();	 //アクション
 	void Draw();	 //ドロー
+
+
 private:
 	float bx, by;
 

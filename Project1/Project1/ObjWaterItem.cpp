@@ -69,6 +69,7 @@ void CObjWaterItem::Action()
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type);
 
+	
 
 	//à íuÇÃçXêV
 	m_ix += m_vx;
