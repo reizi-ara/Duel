@@ -33,13 +33,13 @@ void CSceneMain::InitScene()
 	//外部データの読み取り（ステージ情報）
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;//ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"test1.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"stage01.csv", &size);//外部データ読み込み
 
-	int map[20][20];
+	int map[20][25];
 	int count = 1;
 	for (int i = 0; i < 20; i++)
 	{
-		for (int j = 0; j < 20; j++)
+		for (int j = 0; j < 25; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -69,6 +69,10 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"WaterItem.png", 2, TEX_SIZE_64);//水生成アイテム
 
 	Draw::LoadImage(L"BubbleItem.png", 3, TEX_SIZE_64);//生成アイテム
+
+	Draw::LoadImage(L"GoalBlock.png", 4, TEX_SIZE_64);//ゴールブロック
+
+	Draw::LoadImage(L"TestBubble.png", 5, TEX_SIZE_64);//ゴールブロック
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
