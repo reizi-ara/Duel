@@ -9,6 +9,7 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_BLOCK,
 	OBJ_ITEM,
+	
 	OBJ_BACKGROUND,
 };
 //------------------------------------------------
@@ -58,6 +59,7 @@ struct UserData
 #include "ObjBackground.h"
 #include "ObjWaterItem.h"
 #include "ObjBubbleItem.h"
+
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
