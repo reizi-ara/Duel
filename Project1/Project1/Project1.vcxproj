@@ -141,8 +141,10 @@
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjBubbleItem.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjWaterItem.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -162,8 +164,10 @@
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjBubbleItem.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="ObjWaterItem.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneTitle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

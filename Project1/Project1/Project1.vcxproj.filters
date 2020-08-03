@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\アイテム">
       <UniqueIdentifier>{1a4b66a7-fb8e-4c6f-a262-aa6a99aa574a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\タイトル">
+      <UniqueIdentifier>{ffbfcb06-44df-452f-9925-46f0c4f3a197}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -75,6 +78,12 @@
     <ClCompile Include="ObjBubbleItem.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -133,6 +142,12 @@
     </ClInclude>
     <ClInclude Include="ObjBubbleItem.h">
       <Filter>ソース ファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
