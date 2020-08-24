@@ -12,28 +12,28 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMain.h"
+#include "SceneMain4.h"
 #include "GameHead.h"
 //コンストラクタ
-CSceneMain::CSceneMain()
+CSceneMain4::CSceneMain4()
 {
 
 }
 
 //デストラクタ
-CSceneMain::~CSceneMain()
+CSceneMain4::~CSceneMain4()
 {
 
 }
 
 //ゲームメイン初期化メソッド
-void CSceneMain::InitScene()
+void CSceneMain4::InitScene()
 {
-	
+
 	//外部データの読み取り（ステージ情報）
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;//ステージ情報の大きさ
-	p = Save::ExternalDataOpen(L"stage01.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"stage04.csv", &size);//外部データ読み込み
 
 	int map[20][25];
 	int count = 1;
@@ -56,7 +56,7 @@ void CSceneMain::InitScene()
 			}
 		}
 	}
-	
+
 
 	//グラフィック読み込み
 	Draw::LoadImage(L"image.png", 10, TEX_SIZE_512);
@@ -72,7 +72,7 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"GoalBlock.png", 4, TEX_SIZE_64);//ゴールブロック
 
-	
+
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
@@ -88,9 +88,7 @@ void CSceneMain::InitScene()
 }
 
 //ゲームメイン実行化メソッド
-void CSceneMain::Scene()
+void CSceneMain4::Scene()
 {
 
 }
-
-
