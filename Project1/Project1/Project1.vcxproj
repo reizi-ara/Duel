@@ -140,9 +140,11 @@
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjBubbleItem.cpp" />
+    <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjWaterItem.cpp" />
+    <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
   </ItemGroup>
@@ -163,9 +165,11 @@
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjBubbleItem.h" />
+    <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="ObjWaterItem.h" />
+    <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneTitle.h" />
   </ItemGroup>

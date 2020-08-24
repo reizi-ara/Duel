@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\タイトル">
       <UniqueIdentifier>{ffbfcb06-44df-452f-9925-46f0c4f3a197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameOver">
+      <UniqueIdentifier>{43225d06-2d50-43cf-bc2b-7525cd79235a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -84,6 +87,12 @@
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソース ファイル\タイトル</Filter>
     </ClCompile>
+    <ClCompile Include="SceneGameOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -148,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGameOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

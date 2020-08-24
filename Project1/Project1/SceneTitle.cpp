@@ -29,7 +29,11 @@ CSceneTitle::~CSceneTitle()
 void CSceneTitle::InitScene()
 {
 	//出力させる文字グラフィックを作成する
-	Font::SetStrTex(L"");
+	Font::SetStrTex(L"Bubble Road Enterキーを押してね");
+
+	//タイトルオブジェクト作成
+	CObjTitle* obj = new CObjTitle();    //タイトルオブジェクト作成
+	Objs::InsertObj(obj, OBJ_TITLE, 10); //主人公オブジェクト登録
 }
 
 //ゲームメイン実行中メソッド

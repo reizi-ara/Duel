@@ -11,6 +11,8 @@ enum OBJ_NAME
 	OBJ_ITEM,
 	
 	OBJ_BACKGROUND,
+	OBJ_TITLE,
+	OBJ_GAME_OVER,
 };
 //------------------------------------------------
 
@@ -59,15 +61,18 @@ struct UserData
 #include "ObjBackground.h"
 #include "ObjWaterItem.h"
 #include "ObjBubbleItem.h"
+#include "ObjTitle.h"
+#include "ObjGameOver.h"
 
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include"SceneMain.h"
 #include "SceneTitle.h"
+#include "SceneGameOver.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START  CSceneMain
+#define SET_GAME_START  CSceneGameOver
 //-----------------------------------------------
