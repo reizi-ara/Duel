@@ -45,7 +45,10 @@ void CObjWaterItem::Init()
 //アクション
 void CObjWaterItem::Action()
 {
-
+	//主人公の位置を取得
+	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	float hx = hero->GetX();
+	float hy = hero->GetY();
 
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -57,7 +60,6 @@ void CObjWaterItem::Action()
 
 	//自由落下運動
 	m_iy += 16.8 / (3.0f);
-
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
@@ -89,7 +91,10 @@ void CObjWaterItem::Action()
 
 	}
 
+	/*if (hx+64.0f < && hy+64.0f )
+	{
 
+	}*/
 }
 
 //ドロー

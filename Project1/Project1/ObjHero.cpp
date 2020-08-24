@@ -47,10 +47,6 @@ void CObjHero::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
-	//水アイテムの位置を取得
-	CObjWaterItem* water = (CObjWaterItem*)Objs::GetObj(OBJ_ITEM);
-	float wx = water->GetVX();
-	float wy = water->GetVY();
 
 	//Xキー入力でジャンプ
 	if (Input::GetVKey(' ') == true)
@@ -139,11 +135,7 @@ void CObjHero::Action()
 		Scene::SetScene(new CSceneMain());
 	}
 
-	//水アイテムの当たり判定
-	if (wx+64.0f && wy+64.0f)
-	{
-
-	}
+	
 }
 
 //ドロー

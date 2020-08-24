@@ -12,8 +12,8 @@ class CObjWaterItem :public CObj
 public:
 	CObjWaterItem(float x, float y);
 	~CObjWaterItem() {};
-	float GetVY() { return m_iy; }
-	float GetVX() { return m_ix; }
+	float GetVY() { return m_vy; }
+	float GetVX() { return m_vx; }
 	void Init();	 //イニシャライズ
 	void Action();	 //アクション
 	void Draw();	 //ドロー
