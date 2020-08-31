@@ -77,8 +77,8 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 1)
 				{
 					
-					//泡block
-					
+					//魔法陣
+
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
 					src.m_right = src.m_left + 32.0f;
@@ -130,13 +130,11 @@ void CObjBlock::Draw()
 				}
 				else if (m_map[i][j] == 5)
 				{
-					
+					//ゴールブロック
 					src.m_top = 0.0f;
 					src.m_left = 64.0f;
 					src.m_right = src.m_left + 64.0f;
 					src.m_bottom = src.m_top + 64.0f;
-			
-					//ゴールブロック
 					BlockDraw(320.0f, 0.0f, &dst, c);
 
 					//描画

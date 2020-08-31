@@ -63,6 +63,15 @@ void CObjBubbleItem::Action()
 	m_ix += m_vx;
 	m_iy += m_vy;
 
+	float line =  500;
+
+	int ex = ((int)line) / 64;
+
+	/*if (m_map[])
+	{
+		CObjBubbleItem* obj = new CObjBubbleItem(500.0f, 50);
+		Objs::InsertObj(obj, OBJ_ITEM, 1);
+	}*/
 
 	//HiitBox�̈ʒu�̕ύX
 	CHitBox* hit = Hits::GetHitBox(this);
