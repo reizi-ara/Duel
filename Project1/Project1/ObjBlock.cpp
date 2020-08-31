@@ -77,7 +77,8 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 1)
 				{
 					
-					//ñA
+					//ñÇñ@êw
+
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
 					src.m_right = src.m_left + 64.0f;
@@ -127,6 +128,10 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 5)
 				{
 					//ÉSÅ[ÉãÉuÉçÉbÉN
+					src.m_top = 0.0f;
+					src.m_left = 64.0f;
+					src.m_right = src.m_left + 64.0f;
+					src.m_bottom = src.m_top + 64.0f;
 					BlockDraw(320.0f, 0.0f, &dst, c);
 
 					//ï`âÊ

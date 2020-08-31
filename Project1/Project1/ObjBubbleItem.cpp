@@ -56,22 +56,22 @@ void CObjBubbleItem::Action()
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 
-	//ブロックとの当たり判定
-	/*CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pb->BlockHit(&m_ix, &m_iy,
-		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type);*/
-
-
 	//位置の更新
 	m_ix += m_vx;
 	m_iy += m_vy;
 
+	float line =  500;
+
+	int ex = ((int)line) / 64;
+
+	/*if (m_map[])
+	{
+		CObjBubbleItem* obj = new CObjBubbleItem(500.0f, 50);
+		Objs::InsertObj(obj, OBJ_ITEM, 1);
+	}*/
 
 	//HiitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	
-
 
 	if (hit->CheckElementHit(ELEMENT_PLAYER) != false)
 	{
