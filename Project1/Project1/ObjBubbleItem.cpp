@@ -52,22 +52,15 @@ void CObjBubbleItem::Action()
 
 
 
-	//摩擦の計算   -(運動energy X 摩擦係数)
-	m_ix += -(m_vx * 0.098);
-
-	//自由落下運動
-	m_iy += 16.8 / (3.0f);
-
-
 
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 
 	//ブロックとの当たり判定
-	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	/*CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	pb->BlockHit(&m_ix, &m_iy,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type);
+		&m_block_type);*/
 
 
 	//位置の更新
@@ -77,10 +70,10 @@ void CObjBubbleItem::Action()
 
 	//HiitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ix, m_iy);
+	
 
 
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_PLAYER) != false)
 	{
 
 		this->SetStatus(false);
@@ -88,7 +81,7 @@ void CObjBubbleItem::Action()
 
 	}
 
-
+	hit->SetPos(m_ix, m_iy);
 }
 
 //ドロー

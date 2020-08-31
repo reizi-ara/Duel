@@ -66,10 +66,10 @@ void CObjWaterItem::Action()
 	int d;
 
 	//ƒuƒƒbƒN‚Æ‚Ì“–‚½‚è”»’è
-	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	/*CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	pb->BlockHit(&m_ix, &m_iy,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type);
+		&m_block_type);*/
 
 	
 
@@ -83,7 +83,7 @@ void CObjWaterItem::Action()
 	hit->SetPos(m_ix, m_iy);
 
 
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 
 		this->SetStatus(false);
