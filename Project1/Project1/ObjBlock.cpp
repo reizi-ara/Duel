@@ -77,10 +77,11 @@ void CObjBlock::Draw()
 				if (m_map[i][j] == 1)
 				{
 					
-					//ñA
+					//ñÇñ@êw
+
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
-					src.m_right = src.m_left + 64.0f;
+					src.m_right = src.m_left + 32.0f;
 					src.m_bottom = src.m_top + 64.0f;
 					BlockDraw(320.0f, 0.0f, &dst, c);
 					//ï`âÊ
@@ -88,7 +89,7 @@ void CObjBlock::Draw()
 					
 				}
 
-				if (m_map[i][j] == 2)
+				else if (m_map[i][j] == 2)
 				{
 					//êÖê∂ê¨ÉAÉCÉeÉÄ
 					src.m_top = 0.0f;
@@ -103,13 +104,16 @@ void CObjBlock::Draw()
 				}
 
 
-				if (m_map[i][j] == 3)
+				else if (m_map[i][j] == 3)
 				{
+
 					//ñAê∂ê¨ÉAÉCÉeÉÄ
+					
 					src.m_top = 0.0f;
 					src.m_left = 64.0f;
 					src.m_right = src.m_left + 64.0f;
 					src.m_bottom = src.m_top + 64.0f;
+					
 					BlockDraw(320.0f, 0.0f, &dst, c);
 
 					//ï`âÊ
@@ -119,26 +123,30 @@ void CObjBlock::Draw()
 
 				}
 
-				if (m_map[i][j] == 4)
+				else if (m_map[i][j] == 4)
 				{
 					//è·äQï®ópÇÃñA
 					;
 				}
-				if (m_map[i][j] == 5)
+				else if (m_map[i][j] == 5)
 				{
 					//ÉSÅ[ÉãÉuÉçÉbÉN
+					src.m_top = 0.0f;
+					src.m_left = 64.0f;
+					src.m_right = src.m_left + 64.0f;
+					src.m_bottom = src.m_top + 64.0f;
 					BlockDraw(320.0f, 0.0f, &dst, c);
 
 					//ï`âÊ
 					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
 
-				if (m_map[i][j] == 6)
+				else if (m_map[i][j] == 6)
 				{
 					//ó\îıóp
 					;
 				}
-				if (m_map[i][j] == 7)
+				else if (m_map[i][j] == 7)
 				{
 					//ó\îıóp
 					;
