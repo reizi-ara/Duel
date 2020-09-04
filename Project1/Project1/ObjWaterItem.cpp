@@ -58,10 +58,6 @@ void CObjWaterItem::Action()
 	//摩擦の計算   -(運動energy X 摩擦係数)
 	m_ix += -(m_vx * 0.098);
 
-	//自由落下運動
-	//m_iy += 16.8 / (3.0f);
-
-
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 
@@ -123,8 +119,8 @@ void CObjWaterItem::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f +m_iy;
 	dst.m_left = 0.0f+m_ix;
-	dst.m_right = 64.0f+m_ix;
-	dst.m_bottom = 64.0f+m_iy;
+	dst.m_right =32.0f+m_ix;
+	dst.m_bottom = 32.0f+m_iy;
 
 
 	//描画

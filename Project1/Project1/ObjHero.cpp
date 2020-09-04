@@ -61,7 +61,7 @@ void CObjHero::Action()
 	if (Input::GetVKey('C') == true)
 	{
 		//泡オブジェクト作成
-		CObjBubbleItem* obj_b = new CObjBubbleItem(m_px+64,m_py);
+		CObjBubbleItem* obj_b = new CObjBubbleItem(m_px,m_py);
 		Objs::InsertObj(obj_b, OBJ_ITEM, 3);
 	}
 
@@ -69,7 +69,7 @@ void CObjHero::Action()
 	if (Input::GetVKey('V') == true)
 	{
 		//水オブジェクト作成
-		CObjWaterItem* obj_w = new CObjWaterItem(m_px+64, m_py);
+		CObjWaterItem* obj_w = new CObjWaterItem(m_px, m_py);
 		Objs::InsertObj(obj_w, OBJ_ITEM, 2);
 	}
 
