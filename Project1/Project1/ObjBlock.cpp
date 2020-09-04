@@ -29,7 +29,23 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
-	
+	float line=0;
+
+	//アイテム出現ラインを要素番号化
+	int item1 = ((int)line) / 64;
+
+	for (int i = 0; i < 20; i++)
+	{
+		for (int j=0; j < 25; j++)
+		{
+			if (m_map[i][item1] == 3)
+			{
+				
+
+			}
+
+		}
+	}
 
 
 
@@ -89,7 +105,7 @@ void CObjBlock::Draw()
 					
 				}
 
-				else if (m_map[i][j] == 2)
+				if (m_map[i][j] == 2)
 				{
 					//水生成アイテム
 					src.m_top = 0.0f;
@@ -104,31 +120,25 @@ void CObjBlock::Draw()
 				}
 
 
-				else if (m_map[i][j] == 3)
+				if (m_map[i][j] == 3)
 				{
-
 					//泡生成アイテム
+					CObjBubbleItem* obj = new CObjBubbleItem(j*32.0f,i*32.0f);
+					Objs::InsertObj(obj, OBJ_ITEM, 3);
+
+					//アイテム出現場所の値を0にする
+					m_map[i][j] = 0;
 					
-					src.m_top = 0.0f;
-					src.m_left = 64.0f;
-					src.m_right = src.m_left + 64.0f;
-					src.m_bottom = src.m_top + 64.0f;
-					
-					BlockDraw(320.0f, 0.0f, &dst, c);
-
-					//描画
-					Draw::Draw(3, &src, &dst, c, 0.0f);
-
-
 
 				}
 
-				else if (m_map[i][j] == 4)
+				if (m_map[i][j] == 4)
 				{
 					//障害物用の泡
 					;
 				}
-				else if (m_map[i][j] == 5)
+
+				if (m_map[i][j] == 5)
 				{
 					//ゴールブロック
 					src.m_top = 0.0f;
@@ -141,12 +151,12 @@ void CObjBlock::Draw()
 					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
 
-				else if (m_map[i][j] == 6)
+				if (m_map[i][j] == 6)
 				{
 					//予備用
 					;
 				}
-				else if (m_map[i][j] == 7)
+				if (m_map[i][j] == 7)
 				{
 					//予備用
 					;

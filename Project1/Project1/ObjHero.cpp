@@ -143,8 +143,14 @@ void CObjHero::Action()
 		Scene::SetScene(new CSceneGameOver());
 	}
 
-	
-	
+	//主人公が当たった時にtrueにする
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
+	{
+		//プレイヤーに当たってtrueになったらfalseにし、消す
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	hit->SetPos(m_px , m_py);
 
 }
 
