@@ -60,13 +60,17 @@ void CObjHero::Action()
 	//Cキー入力で泡発射
 	if (Input::GetVKey('C') == true)
 	{
-		
+		//泡オブジェクト作成
+		CObjBubbleItem* obj_b = new CObjBubbleItem(m_px,m_py);
+		Objs::InsertObj(obj_b, OBJ_ITEM, 3);
 	}
 
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)
 	{
-		
+		//水オブジェクト作成
+		CObjWaterItem* obj_w = new CObjWaterItem(m_px, m_py);
+		Objs::InsertObj(obj_w, OBJ_ITEM, 2);
 	}
 
 	//キーの入力方向
