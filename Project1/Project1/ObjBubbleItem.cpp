@@ -60,9 +60,7 @@ void CObjBubbleItem::Action()
 	m_ix += m_vx;
 	m_iy += m_vy;
 
-	float line =  500;
-
-	int ex = ((int)line) / 64;
+	
 
 	/*if (m_map[])
 	{
