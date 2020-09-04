@@ -53,7 +53,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true)
 		{
-			m_vy = -12;
+			m_vy = -8;
 		}
 	}
 
@@ -129,12 +129,17 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px, m_py);
 
-	if (m_py > 1000.0f) 
+	//主人公が画面下に落ちたらゲームオーバーに移行
+	if (m_py > 1000.0f)
 	{
-		//場外に出たらリスタート
-		Scene::SetScene(new CSceneMain());
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+
+		//主人公のHPがゼロになった時ゲームオーバー画面に移行する
+		Scene::SetScene(new CSceneGameOver());
 	}
 
+	
 	
 
 }

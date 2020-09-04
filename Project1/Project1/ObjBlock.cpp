@@ -81,7 +81,7 @@ void CObjBlock::Draw()
 
 					src.m_top = 0.0f;
 					src.m_left = 320.0f;
-					src.m_right = src.m_left + 64.0f;
+					src.m_right = src.m_left + 32.0f;
 					src.m_bottom = src.m_top + 64.0f;
 					BlockDraw(320.0f, 0.0f, &dst, c);
 					//描画
@@ -89,7 +89,7 @@ void CObjBlock::Draw()
 					
 				}
 
-				if (m_map[i][j] == 2)
+				else if (m_map[i][j] == 2)
 				{
 					//水生成アイテム
 					src.m_top = 0.0f;
@@ -104,13 +104,16 @@ void CObjBlock::Draw()
 				}
 
 
-				if (m_map[i][j] == 3)
+				else if (m_map[i][j] == 3)
 				{
+
 					//泡生成アイテム
+					
 					src.m_top = 0.0f;
 					src.m_left = 64.0f;
 					src.m_right = src.m_left + 64.0f;
 					src.m_bottom = src.m_top + 64.0f;
+					
 					BlockDraw(320.0f, 0.0f, &dst, c);
 
 					//描画
@@ -120,12 +123,12 @@ void CObjBlock::Draw()
 
 				}
 
-				if (m_map[i][j] == 4)
+				else if (m_map[i][j] == 4)
 				{
 					//障害物用の泡
 					;
 				}
-				if (m_map[i][j] == 5)
+				else if (m_map[i][j] == 5)
 				{
 					//ゴールブロック
 					src.m_top = 0.0f;
@@ -138,12 +141,12 @@ void CObjBlock::Draw()
 					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
 
-				if (m_map[i][j] == 6)
+				else if (m_map[i][j] == 6)
 				{
 					//予備用
 					;
 				}
-				if (m_map[i][j] == 7)
+				else if (m_map[i][j] == 7)
 				{
 					//予備用
 					;
