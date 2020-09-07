@@ -230,7 +230,7 @@ void CObjBlock::BlockHit(
 							*down = true;
 							*y = by - 32.0f;
 							//種類を渡すのスタートとゴールのみ変更する
-							if (m_map[i][j] == 3)//ゴールブロック
+							if (m_map[i][j] == 5)//ゴールブロック
 								*bt = m_map[i][j];
 
 							*vy = 0.0f;
@@ -272,7 +272,6 @@ void CObjBlock::BlockBulletHit(
 	*down = false;
 	*left = false;
 	*right = false;
-
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 20; i++)

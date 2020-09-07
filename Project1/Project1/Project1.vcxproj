@@ -140,10 +140,12 @@
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjBubbleItem.cpp" />
+    <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjWaterItem.cpp" />
+    <ClCompile Include="SceneClear.cpp" />
     <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneMain2.cpp">
@@ -171,10 +173,12 @@
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjBubbleItem.h" />
+    <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="ObjWaterItem.h" />
+    <ClInclude Include="SceneClear.h" />
     <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneMain2.h" />

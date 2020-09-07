@@ -156,6 +156,16 @@ void CObjHero::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+
+	if (m_block_type == 5)//主人公がゴールブロックを踏むとステージ移行
+	{
+		this->SetStatus(false);//主人公オブジェクト削除
+		Hits::DeleteHitBox(this);//ヒットボックス削除
+
+		Scene::SetScene(new CSceneClear());
+	}
+
 	hit->SetPos(m_px , m_py);
 
 }

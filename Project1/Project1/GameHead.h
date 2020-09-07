@@ -13,6 +13,7 @@ enum OBJ_NAME
 	OBJ_BACKGROUND,
 	OBJ_TITLE,
 	OBJ_GAME_OVER,
+	OBJ_CLEAR,
 };
 //------------------------------------------------
 
@@ -63,6 +64,8 @@ struct UserData
 #include "ObjBubbleItem.h"
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
+#include "ObjClear.h"
+
 
 //------------------------------------------------
 
@@ -74,6 +77,7 @@ struct UserData
 #include"SceneMain5.h"
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
+#include "SceneClear.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
