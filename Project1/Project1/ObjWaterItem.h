@@ -40,7 +40,7 @@ private:
 	bool m_hit_down;
 	bool m_hit_left;
 	bool m_hit_right;
-	bool flag;
+	bool flag2;
 
 	int hp;
 	int hp_max;

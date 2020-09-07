@@ -33,6 +33,7 @@ void CObjHero::Init()
 	bool m_hit_left = false;
 	bool m_hit_right = false;
 
+	
 	m_block_type = 0;     //踏んでいるblockの種類を確認用
 
 	//当たり判定用のHitBoxを作成
@@ -47,6 +48,8 @@ void CObjHero::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
+	
+	
 
 	//Xキー入力でジャンプ
 	if (Input::GetVKey(' ') == true)
@@ -56,14 +59,17 @@ void CObjHero::Action()
 			m_vy = -8;
 		}
 	}
-
-	//Cキー入力で泡発射
-	if (Input::GetVKey('C') == true)
+	if (flag==true)
 	{
-		//泡オブジェクト作成
-		CObjBubbleItem* obj_b = new CObjBubbleItem(m_px,m_py);
-		Objs::InsertObj(obj_b, OBJ_ITEM, 3);
+		//Cキー入力で泡発射
+		if (Input::GetVKey('C') == true)
+		{
+			//泡オブジェクト作成
+			CObjBubbleItem* obj_b = new CObjBubbleItem(m_px, m_py);
+			Objs::InsertObj(obj_b, OBJ_ITEM, 3);
+		}
 	}
+	
 
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)

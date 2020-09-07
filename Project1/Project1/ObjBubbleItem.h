@@ -15,6 +15,9 @@ public:
 	void Init();	 //イニシャライズ
 	void Action();	 //アクション
 	void Draw();	 //ドロー
+
+	bool Getflag() { return flag; }
+
 private:
 	float bx, by;
 
@@ -36,7 +39,6 @@ private:
 	bool m_hit_down;
 	bool m_hit_left;
 	bool m_hit_right;
-	bool flag;
 
 	int hp;
 	int hp_max;
@@ -52,5 +54,7 @@ private:
 
 	float h_x;//ヒーローの位置取得用変数
 	float h_y;//ヒーローの位置取得用変数
+
+	bool flag;
 
 };

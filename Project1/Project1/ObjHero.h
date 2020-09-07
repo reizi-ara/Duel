@@ -32,6 +32,8 @@ public:
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
 
+	void Getflag(bool f) { flag = f; }
+
 
 private:
 	float m_px;         //位置
@@ -48,6 +50,7 @@ private:
 	float m_speed_power;   //スピードパワー
 	float m_ani_max_time;//アニメーション間隔幅
 
+	bool flag;
 
 	//blockとの衝突状態確認用
 	bool m_hit_up;

@@ -48,7 +48,7 @@ void CObjBubbleItem::Action()
 
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-
+	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
@@ -61,14 +61,12 @@ void CObjBubbleItem::Action()
 	//HiitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ix, m_iy);
-
-
+	
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
-
+		hero->Getflag(true);
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);//が所有するHitBoxに消去する。
-
 	}
 
 	hit->SetPos(m_ix, m_iy);

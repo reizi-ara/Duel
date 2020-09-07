@@ -74,9 +74,7 @@ void CSceneMain2::InitScene()
 
 
 
-	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 1); //作ったオブジェクトをオブジェクトマネージャーに登録
+	
 
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
@@ -85,6 +83,10 @@ void CSceneMain2::InitScene()
 	//背景オブジェクト作成
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 1);
+
+	//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
+	Objs::InsertObj(obj, OBJ_HERO, 5); //作ったオブジェクトをオブジェクトマネージャーに登録
 }
 
 //ゲームメイン実行化メソッド
