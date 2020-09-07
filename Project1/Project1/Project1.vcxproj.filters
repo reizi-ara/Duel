@@ -37,6 +37,9 @@
     <Filter Include="ソース ファイル\GameOver">
       <UniqueIdentifier>{43225d06-2d50-43cf-bc2b-7525cd79235a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameClear">
+      <UniqueIdentifier>{e483ad6d-b379-44a7-bf59-975a7a14248b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -120,6 +123,12 @@
     <ClCompile Include="ObjWaterItem.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -202,6 +211,12 @@
     </ClInclude>
     <ClInclude Include="ObjWaterItem.h">
       <Filter>ソース ファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
