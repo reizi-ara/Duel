@@ -89,11 +89,6 @@ void CObjWaterItem::Action()
 		Hits::DeleteHitBox(this);//が所有するHitBoxに消去する。
 
 	}
-
-	/*if (hx+64.0f < && hy+64.0f )
-	{
-
-	}*/
 }
 
 //ドロー
