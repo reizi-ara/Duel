@@ -84,7 +84,7 @@ void CSceneMain4::InitScene()
 
 	//背景オブジェクト作成
 	CObjBackground* back = new CObjBackground();
-	Objs::InsertObj(back, OBJ_BACKGROUND, 1);
+	Objs::InsertObj(back, OBJ_BACKGROUND, 5);
 }
 
 //ゲームメイン実行化メソッド

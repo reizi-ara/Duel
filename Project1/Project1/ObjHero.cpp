@@ -59,7 +59,7 @@ void CObjHero::Action()
 			m_vy = -10;
 		}
 	}
-	if (flag==true)
+	if (flagb==true)
 	{
 		//CƒL[“ü—Í‚Å–A”­Ë
 		if (Input::GetVKey('C') == true)

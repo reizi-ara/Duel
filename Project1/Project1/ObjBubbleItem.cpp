@@ -46,7 +46,7 @@ void CObjBubbleItem::Init()
 void CObjBubbleItem::Action()
 {
 
-	//ブロック情報を持ってくる
+	//ブロック・主人公情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
