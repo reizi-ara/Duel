@@ -32,7 +32,7 @@ public:
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
 
-	void Getflag(bool f) { flag = f; }
+	void Getflag(bool f) { flagb = f; }
 
 
 private:
@@ -50,7 +50,8 @@ private:
 	float m_speed_power;   //スピードパワー
 	float m_ani_max_time;//アニメーション間隔幅
 
-	bool flag;
+	bool flagb;
+	bool flagw;
 
 	//blockとの衝突状態確認用
 	bool m_hit_up;
