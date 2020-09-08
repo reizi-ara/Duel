@@ -27,7 +27,7 @@ void CObjBubbleItem::Init()
 
 
 	m_sx = 64;  //画像サイズをBlockHitに渡す用
-	m_sy = 64;
+	m_sy = 64;  
 
 
 	//blockとの衝突状態用確認用
