@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 //使用するヘッダー
 #include "GameL\SceneObjManager.h"
 
@@ -7,18 +6,23 @@
 using namespace GameL;
 
 //オブジェクト：アイテム
-class CObjBubbleItem :public CObj
+class CObjBubbleRide :public CObj
 {
 public:
-	CObjBubbleItem(float x, float y);
-	~CObjBubbleItem() {};
+	CObjBubbleRide(float x, float y);
+	~CObjBubbleRide() {};
 	void Init();	 //イニシャライズ
 	void Action();	 //アクション
 	void Draw();	 //ドロー
 
 	bool Getflag() { return flag; }
 
-	
+	//泡との当たり判定
+	void BubbleHit(
+		float* x, float* y,
+		bool* up, bool* down, bool* left, bool* right,
+		float* vx, float* vy, int* bt
+	);
 
 private:
 	float bx, by;

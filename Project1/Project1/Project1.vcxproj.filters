@@ -129,6 +129,9 @@
     <ClCompile Include="ObjClear.cpp">
       <Filter>ソース ファイル\GameClear</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBubbleRide.cpp">
+      <Filter>ソース ファイル\アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -217,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="ObjClear.h">
       <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBubbleRide.h">
+      <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

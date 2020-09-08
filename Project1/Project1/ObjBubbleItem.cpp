@@ -54,14 +54,14 @@ void CObjBubbleItem::Action()
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 
-		//位置の更新
+	//位置の更新
 	m_ix += m_vx;
 	m_iy += m_vy;
 
 	//HiitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ix, m_iy);
-	
+
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 		hero->Getflag(true);
@@ -71,7 +71,11 @@ void CObjBubbleItem::Action()
 
 	hit->SetPos(m_ix, m_iy);
 
+	
+
 }
+
+
 
 //ドロー
 void CObjBubbleItem::Draw()

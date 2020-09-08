@@ -74,7 +74,6 @@ void CSceneMain::InitScene()
 
 	
 
-	
 
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);

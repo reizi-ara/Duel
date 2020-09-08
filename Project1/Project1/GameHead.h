@@ -65,6 +65,7 @@ struct UserData
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
 #include "ObjClear.h"
+#include "ObjBubbleRide.h"
 
 
 //------------------------------------------------
