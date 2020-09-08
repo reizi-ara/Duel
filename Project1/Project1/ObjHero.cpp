@@ -65,13 +65,13 @@ void CObjHero::Action()
 			m_vy = -10;
 		}
 	}
-	if (flag==true)
+	if (flagb==true)
 	{
 		//Cキー入力で泡発射
 		if (Input::GetVKey('C') == true)
 		{
-			//泡オブジェクト作成
-			CObjBubbleItem* obj_b = new CObjBubbleItem(m_px, m_py);
+			//泡アイテムオブジェクト作成
+			CObjBubbleRide* obj_b = new CObjBubbleRide(m_px, m_py);
 			Objs::InsertObj(obj_b, OBJ_ITEM, 3);
 		}
 	}
@@ -80,7 +80,7 @@ void CObjHero::Action()
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)
 	{
-		//水オブジェクト作成
+		//水アイテムオブジェクト作成
 		CObjWaterItem* obj_w = new CObjWaterItem(m_px, m_py);
 		Objs::InsertObj(obj_w, OBJ_ITEM, 2);
 	}
