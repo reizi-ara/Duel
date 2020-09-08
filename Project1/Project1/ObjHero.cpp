@@ -65,7 +65,7 @@ void CObjHero::Action()
 		if (Input::GetVKey('C') == true)
 		{
 			//泡アイテムオブジェクト作成
-			CObjBubbleItem* obj_b = new CObjBubbleItem(m_px, m_py);
+			CObjBubbleRide* obj_b = new CObjBubbleRide(m_px, m_py);
 			Objs::InsertObj(obj_b, OBJ_ITEM, 3);
 		}
 	}

@@ -26,10 +26,6 @@ void CObjBubbleRide::Init()
 void CObjBubbleRide::Action()
 {
 
-	
-
-
-
 }
 
 
