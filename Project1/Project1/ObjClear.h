@@ -9,12 +9,12 @@ using namespace GameL;
 class CObjClear :public CObj
 {
 public:
-	CObjClear() {};
+	CObjClear(int map);
 	~CObjClear() {};
 	void Init();
 	void Action();
 	void Draw();
 private:
 	bool m_key_flag;
-
+	int m_map;
 };

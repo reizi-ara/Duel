@@ -22,7 +22,7 @@ void CObjTitle::Action()
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneMain());
+			Scene::SetScene(new CSceneMain(1));
 			m_key_flag = false;
 		}
 	}
@@ -36,7 +36,7 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"–A“¹", 3,50, 400, c);
+	Font::StrDraw(L"–A“¹", 200,120, 200, c);
 	Font::StrDraw(L"EnterƒL[‚ğ‰Ÿ‚µ‚Ä‚Ë", 220, 530, 40, c);
 
 }

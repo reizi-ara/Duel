@@ -9,7 +9,7 @@ using namespace GameL;
 class CObjGameOver :public CObj
 {
 public:
-	CObjGameOver() {};
+	CObjGameOver(int map);
 	~CObjGameOver() {};
 	void Init();   //イニシャライズ
 	void Action(); //アクション
@@ -17,4 +17,5 @@ public:
 
 private:
 	bool m_key_flag; //キーフラグ
+	int m_map;
 };

@@ -9,7 +9,7 @@ using namespace GameL;
 class CSceneClear :public CScene
 {
 public:
-	CSceneClear();
+	CSceneClear(int map);
 	~CSceneClear();
 	void InitScene();
 	void Scene();
@@ -17,5 +17,5 @@ public:
 private:
 	bool m_key_flag;//
 
-
+	int m_map;
 };

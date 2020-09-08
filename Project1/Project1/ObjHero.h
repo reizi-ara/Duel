@@ -9,7 +9,7 @@ using namespace GameL;
 class CObjHero :public CObj
 {
 public:
-	CObjHero() {};
+	CObjHero(int map);
 	~CObjHero() {};
 	void Init();     //イニシャライズ
 	void Action();   //アクション
@@ -63,4 +63,6 @@ private:
 
 	//テスト用
 	float px, py;  //交点
+
+	int m_map;
 };

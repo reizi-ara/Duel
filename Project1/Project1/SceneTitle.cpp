@@ -34,6 +34,7 @@ void CSceneTitle::InitScene()
 	//タイトルオブジェクト作成
 	CObjTitle* obj = new CObjTitle();    //タイトルオブジェクト作成
 	Objs::InsertObj(obj, OBJ_TITLE, 10); //主人公オブジェクト登録
+
 }
 
 //ゲームメイン実行中メソッド

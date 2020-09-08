@@ -10,6 +10,12 @@
 //使用するネームスペース
 using namespace GameL;
 
+//コンストラクタ
+CObjHero::CObjHero(int map)
+{
+	m_map = map;
+}
+
 //イニシャライズ
 void CObjHero::Init()
 {
@@ -146,7 +152,7 @@ void CObjHero::Action()
 		Hits::DeleteHitBox(this);
 
 		//主人公のHPがゼロになった時ゲームオーバー画面に移行する
-		Scene::SetScene(new CSceneGameOver());
+		Scene::SetScene(new CSceneGameOver(m_map));
 	}
 
 	//主人公が当たった時にtrueにする
@@ -163,7 +169,7 @@ void CObjHero::Action()
 		this->SetStatus(false);//主人公オブジェクト削除
 		Hits::DeleteHitBox(this);//ヒットボックス削除
 
-		Scene::SetScene(new CSceneClear());
+		Scene::SetScene(new CSceneClear(m_map));
 	}
 
 	hit->SetPos(m_px , m_py);

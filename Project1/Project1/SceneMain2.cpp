@@ -85,7 +85,7 @@ void CSceneMain2::InitScene()
 	Objs::InsertObj(back, OBJ_BACKGROUND, 1);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero(); //主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(1); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 5); //作ったオブジェクトをオブジェクトマネージャーに登録
 }
 

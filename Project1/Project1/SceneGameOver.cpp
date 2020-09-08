@@ -14,9 +14,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneGameOver::CSceneGameOver()
+CSceneGameOver::CSceneGameOver(int map)
 {
-
+	m_map = map;
 }
 
 //デストラクタ
@@ -29,10 +29,10 @@ CSceneGameOver::~CSceneGameOver()
 void CSceneGameOver::InitScene()
 {
 	//出力させる文字グラフィックを作成する
-	Font::SetStrTex(L"失敗(´・ω・｀) 次は頑張ってね! Enterキーを押してね");
+	Font::SetStrTex(L"失敗(´・ω・｀) 次は頑張ってね! Enterキーを押してリトライする");
 
 	//タイトルオブジェクト作成
-	CObjGameOver* obj = new CObjGameOver();
+	CObjGameOver* obj = new CObjGameOver(m_map);
 	Objs::InsertObj(obj, OBJ_GAME_OVER, 10);
 }
 

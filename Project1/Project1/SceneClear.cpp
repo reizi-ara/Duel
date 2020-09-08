@@ -14,10 +14,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneClear::CSceneClear()
+CSceneClear::CSceneClear(int map)
 {
-
-
+	m_map = map;
 }
 
 //デストラクタ
@@ -30,10 +29,10 @@ CSceneClear::~CSceneClear()
 void CSceneClear::InitScene()
 {
 	Font::SetStrTex(L"STAGE CLEAR");
-	Font::SetStrTex(L"Enterキーで次のステージ！");
+	Font::SetStrTex(L"Enterキーを押して次のステージへGO！");
 
 	//クリアオブジェクト作成
-	CObjClear* obj = new CObjClear();//クリアオブジェクト作成
+	CObjClear* obj = new CObjClear(m_map);//クリアオブジェクト作成
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);//クリアオブジェクト登録
 }
 

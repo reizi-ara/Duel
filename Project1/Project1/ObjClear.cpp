@@ -9,6 +9,12 @@
 //使用するネームスペース
 using namespace GameL;
 
+//コンストラクタ
+CObjClear::CObjClear(int map)
+{
+	m_map = map;
+}
+
 //イニシャライズ
 void CObjClear::Init()
 {
@@ -19,12 +25,12 @@ void CObjClear::Init()
 //アクション
 void CObjClear::Action()
 {
-	//エンターキーを押してシーン：タイトルに移行する
+	//エンターキーを押してシーン：次のステージに移行する
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneMain2());
+			Scene::SetScene(new CSceneMain(m_map+1));
 			m_key_flag = false;
 		}
 		else
@@ -41,8 +47,8 @@ void CObjClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"STAGE CLEAR",250,250,45,c);
-	Font::StrDraw(L"Enterキーで次のステージ！",150,300,45,c);
+	Font::StrDraw(L"STAGE CLEAR",120,200,100,c);
+	Font::StrDraw(L"Enterキーを押して次のステージへGO！",60,450,40,c);
 
 
 }
