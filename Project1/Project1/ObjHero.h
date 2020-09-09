@@ -33,7 +33,8 @@ public:
 	void SetRight(bool b) { m_hit_right = b; }
 
 	void Getflag(bool f) { flagb = f; }
-
+	bool Getbubble() { return flagb; }
+	void Setbubble() { flagb = false; }
 
 private:
 	float m_px;         //ˆÊ’u

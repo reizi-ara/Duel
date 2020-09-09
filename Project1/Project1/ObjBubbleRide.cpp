@@ -25,74 +25,16 @@ void CObjBubbleRide::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	//当たり判定用のHitBoxを作成
+	Hits::SetHitBox(this, m_ix, m_iy, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 3);
+
 }
 
 //アクション
 void CObjBubbleRide::Action()
 {
-	/*//オブジェクトとブロックの当たり判定
-	if ((*x + 7 > bx) && (*x < bx + 32) && (*y + 11 > by) && (*y < by + 32))
-	{
-		//上下左右判定
-
-		//vectorの作成
-		float rvx = *x - bx;
-		float rvy = *y - by;
-
-		//長さを求める
-		float len = sqrt(rvx * rvx + rvy * rvy);
-
-		//角度を求める
-		float r = atan2(rvy, rvx);
-		r = r * 180.0f / 3.14f;
-
-		if (r <= 0.0f)
-			r = abs(r);
-		else
-			r = 360.0f - abs(r);
-
-		//lenがある一定の長さのより短い場合判定に入る
-		if (len < 88.0f)
-		{
-			//角度で上下左右を判定
-			if ((r < 45 && r>0) || r > 315)
-			{
-				//右
-				*right = true;
-				*x = bx + 32;
-				*vx = -(*vx) * 0.1f;
-			}
-			if (r > 45 && r < 135)
-			{
-				//上
-				*down = true;
-				*y = by - 32;
-				//種類を渡すのスタートとゴールのみ変更する
-				*vy = 0.0f;
-			}
-			if (r > 135 && r < 225)
-			{
-				//左
-				*left = true;
-				*x = bx - 32;
-				*vx = -(*vx) * 0.1f;
-			}
-			if (r > 225 && r < 315)
-			{
-				//下
-				*up = true;
-				*y = by + 32;
-				if (*vy < 0)
-				{
-					*vy = 0.0f;
-				}
-			}
-		}
-	}
-}*/
+	
 }
-
-
 
 //ドロー
 void CObjBubbleRide::Draw()

@@ -33,17 +33,15 @@ public:
 		float* vx, float* vy, int* bt
 	);
 
-	void BlockBulletHit(
-		float* x, float* y,  float* m_sx, float* m_sy,
-		bool* up, bool* down, bool* left, bool* right,
-		float* vx, float* vy, int* bt
-	);
+	
 
 	//ålŒö‚Æ•Ç‚ÌŒğ·”»’è
 	bool HeroBlockCrossPoint(
 		float x, float y, float vx, float vy,
 		float* out_px, float* out_py, float* out_len
 	);
+
+
 
 private:
 
@@ -60,5 +58,8 @@ private:
 		float b1x, float b1y, float b2x, float b2y,
 		float* out_px, float* out_py
 	);
+
+	int px;
+	int py;
 
 };

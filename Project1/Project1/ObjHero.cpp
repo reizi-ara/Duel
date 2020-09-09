@@ -69,26 +69,7 @@ void CObjHero::Action()
 			m_vy = -10;
 		}
 	}
-	if (flagb==true)
-	{
-		//Cキー入力で泡発射
-		if (Input::GetVKey('C') == true )
-		{
-			if (push == true)
-			{
-
-				//泡アイテムオブジェクト作成
-				CObjBubbleRide* obj_b = new CObjBubbleRide(m_px, m_py);
-				Objs::InsertObj(obj_b, OBJ_ITEM, 3);
-
-				push = false;
-			}	
-		}
-		else
-		{
-			push = true;
-		}
-	}
+	
 	
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)
