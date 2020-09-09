@@ -11,8 +11,8 @@
 //コンストラクタ
 CObjBubbleRide::CObjBubbleRide(float x, float y)
 {
-	bx = x;    //位置
-	by = y;
+	m_ix = x;    //位置
+	m_iy = y;
 
 }
 
@@ -38,7 +38,7 @@ void CObjBubbleRide::Draw()
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 
-	float c[4] = { 1,1,1,1 };
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 
 	RECT_F src;//描画元切り取り位置
