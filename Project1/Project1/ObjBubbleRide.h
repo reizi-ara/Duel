@@ -17,12 +17,7 @@ public:
 
 	bool Getflag() { return flag; }
 
-	//–A‚Æ‚Ì“–‚½‚è”»’è
-	void BubbleHit(
-		float* x, float* y,
-		bool* up, bool* down, bool* left, bool* right,
-		float* vx, float* vy, int* bt
-	);
+	
 
 private:
 	float bx, by;

@@ -53,6 +53,8 @@ private:
 	bool flagb;
 	bool flagw;
 
+	bool push;
+
 	//block‚Æ‚ÌÕ“Ëó‘ÔŠm”F—p
 	bool m_hit_up;
 	bool m_hit_down;
