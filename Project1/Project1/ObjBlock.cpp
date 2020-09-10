@@ -21,7 +21,8 @@ CObjBlock::CObjBlock(int map[20][25])
 //イニシャライズ
 void CObjBlock::Init()
 {
-
+	px = 0;
+	py = 0;
 
 
 }
@@ -29,7 +30,22 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
-	
+	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
+
+	for (int i = 0; i < 20; i++)
+	{
+		for (int j = 0; j < 25; j++)
+		{
+			if (i * 32 < hero->GetY() && (i + 1) * 32 >= hero->GetY())
+			{
+				if (j * 32 < hero->GetX() && (j + 1) * 32 >= hero->GetX())
+				{
+					py = i * 32;
+					px = (j + 1) * 32;
+				}
+			}
+		}
+	}
 
 }
 
@@ -37,15 +53,27 @@ void CObjBlock::Action()
 //ドロー
 void CObjBlock::Draw()
 {
+	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
 
+	RECT_F src1;//描画元切り取り位置
+	RECT_F dst1;//描画先表示位置
+
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-
+	if (Input::GetVKey('C') == true)
+	{
+		if (hero->Getbubble() == true)
+		{
+			m_map[py / 32][(px / 32) + 1] = 6;
+			hero->Setbubble();
+		}
+		
+	}
 	//マップチップによるblock設置
 	for (int i = 0; i < 20; i++)
 	{
@@ -93,14 +121,16 @@ void CObjBlock::Draw()
 
 					//アイテム出現場所の値を0にする
 					m_map[i][j] = 0;
-					
-
 				}
 
+
+				
 				if (m_map[i][j] == 4)
 				{
-					//障害物用の泡
-					;
+					
+
+
+					
 				}
 
 				if (m_map[i][j] == 5)
@@ -118,8 +148,10 @@ void CObjBlock::Draw()
 
 				if (m_map[i][j] == 6)
 				{
-					//予備用
-					;
+					
+					BlockDraw(64.0f, 0.0f, &dst, c);
+					//描画
+					Draw::Draw(3, &src, &dst, c, 0.0f);
 				}
 				if (m_map[i][j] == 7)
 				{
@@ -261,94 +293,7 @@ void CObjBlock::BlockHit(
 	}
 }
 
-void CObjBlock::BlockBulletHit(
-	float* x, float* y, float* m_sx, float* m_sy,
-	bool* up, bool* down, bool* left, bool* right,
-	float* vx, float* vy, int* bt
-)
-{
-	//衝突確認用フラグの初期化
-	*up = false;
-	*down = false;
-	*left = false;
-	*right = false;
 
-	//m_mapの全要素にアクセス
-	for (int i = 0; i < 20; i++)
-	{
-		for (int j = 0; j < 25; j++)
-		{
-			if (m_map[i][j] > 0 && m_map[i][j] != 4)
-			{
-				//要素番号を座標に変更
-				float bx = j * 32.0f;
-				float by = i * 32.0f;
-
-
-
-				//オブジェクトとブロックの当たり判定
-				if ((*x + 7 > bx) && (*x < bx + 32) && (*y + 11 > by) && (*y < by + 32))
-				{
-					//上下左右判定
-
-					//vectorの作成
-					float rvx = *x - bx;
-					float rvy = *y - by;
-
-					//長さを求める
-					float len = sqrt(rvx * rvx + rvy * rvy);
-
-					//角度を求める
-					float r = atan2(rvy, rvx);
-					r = r * 180.0f / 3.14f;
-
-					if (r <= 0.0f)
-						r = abs(r);
-					else
-						r = 360.0f - abs(r);
-
-					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 88.0f)
-					{
-						//角度で上下左右を判定
-						if ((r < 45 && r>0) || r > 315)
-						{
-							//右
-							*right = true;
-							*x = bx + 32;
-							*vx = -(*vx) * 0.1f;
-						}
-						if (r > 45 && r < 135)
-						{
-							//上
-							*down = true;
-							*y = by - 32;
-							//種類を渡すのスタートとゴールのみ変更する
-							*vy = 0.0f;
-						}
-						if (r > 135 && r < 225)
-						{
-							//左
-							*left = true;
-							*x = bx - 32;
-							*vx = -(*vx) * 0.1f;
-						}
-						if (r > 225 && r < 315)
-						{
-							//下
-							*up = true;
-							*y = by + 32;
-							if (*vy < 0)
-							{
-								*vy = 0.0f;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
 
 //内積関数
 float CObjBlock::Dot(float ax, float ay, float bx, float by)

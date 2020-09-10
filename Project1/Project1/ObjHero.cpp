@@ -33,7 +33,9 @@ void CObjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
-	flagb = true;
+	flagb =false;
+
+	bool push=true;//ボタンを押してるかの判定
 
 	//blockとの衝突状態確認用
 	bool m_hit_up = false;
@@ -67,18 +69,8 @@ void CObjHero::Action()
 			m_vy = -10;
 		}
 	}
-	if (flagb==true)
-	{
-		//Cキー入力で泡発射
-		if (Input::GetVKey('C') == true)
-		{
-			//泡アイテムオブジェクト作成
-			CObjBubbleRide* obj_b = new CObjBubbleRide(m_px, m_py);
-			Objs::InsertObj(obj_b, OBJ_ITEM, 3);
-		}
-	}
 	
-
+	
 	//Vキー入力で水発射
 	if (Input::GetVKey('V') == true)
 	{

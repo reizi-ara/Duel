@@ -30,12 +30,7 @@ void CObjBubbleItem::Init()
 	m_sy = 64;  
 
 
-	//blockとの衝突状態用確認用
-	m_hit_up = false;
-	m_hit_down = false;
-	m_hit_left = false;
-	m_hit_right = false;
-
+	
 
 
 	//当たり判定用のHitBoxを作成
@@ -70,7 +65,7 @@ void CObjBubbleItem::Action()
 	}
 
 	hit->SetPos(m_ix, m_iy);
-
+	
 	
 
 }

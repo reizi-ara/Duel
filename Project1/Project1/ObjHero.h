@@ -33,7 +33,8 @@ public:
 	void SetRight(bool b) { m_hit_right = b; }
 
 	void Getflag(bool f) { flagb = f; }
-
+	bool Getbubble() { return flagb; }
+	void Setbubble() { flagb = false; }
 
 private:
 	float m_px;         //位置
@@ -52,6 +53,8 @@ private:
 
 	bool flagb;
 	bool flagw;
+
+	bool push;
 
 	//blockとの衝突状態確認用
 	bool m_hit_up;

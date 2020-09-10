@@ -19,15 +19,22 @@ CObjBubbleRide::CObjBubbleRide(float x, float y)
 //イニシャライズ
 void CObjBubbleRide::Init()
 {
-	
+	//blockとの衝突状態用確認用
+	m_hit_up = false;
+	m_hit_down = false;
+	m_hit_left = false;
+	m_hit_right = false;
+
+	//当たり判定用のHitBoxを作成
+	Hits::SetHitBox(this, m_ix, m_iy, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 3);
+
 }
 
 //アクション
 void CObjBubbleRide::Action()
 {
-
+	
 }
-
 
 //ドロー
 void CObjBubbleRide::Draw()
