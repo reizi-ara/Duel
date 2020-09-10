@@ -59,7 +59,7 @@ void CObjBubbleItem::Action()
 
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
-		hero->Getflag(true);
+		hero->Getflag(4);
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);//‚ªŠ—L‚·‚éHitBox‚ÉÁ‹‚·‚éB
 	}

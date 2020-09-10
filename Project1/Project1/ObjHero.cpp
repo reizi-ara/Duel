@@ -33,7 +33,7 @@ void CObjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
-	flagb =false;
+	flagb =0;
 
 	bool push=true;//ボタンを押してるかの判定
 
@@ -167,6 +167,11 @@ void CObjHero::Action()
 	}
 
 	hit->SetPos(m_px , m_py);
+	if (m_py < 0)
+	{
+		m_py = 0.0f;
+		m_vy = 0.0f;
+	}
 
 }
 

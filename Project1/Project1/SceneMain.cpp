@@ -180,6 +180,8 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"GoalBlock.png", 4, TEX_SIZE_64);//ゴールブロック
 
+	Draw::LoadImage(L"bubble.png", 5, TEX_SIZE_64);//泡
+
 	
 
 	

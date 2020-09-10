@@ -23,7 +23,7 @@ void CObjBlock::Init()
 {
 	px = 0;
 	py = 0;
-
+	push_flag == true;
 
 }
 
@@ -32,16 +32,18 @@ void CObjBlock::Action()
 {
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
+
+	//泡をどこにでも発射させる
 	for (int i = 0; i < 20; i++)
 	{
 		for (int j = 0; j < 25; j++)
 		{
-			if (i * 32 < hero->GetY() && (i + 1) * 32 >= hero->GetY())
+			if (i * 32 < hero->GetY()+16 && (i + 1) * 32 > hero->GetY()+16)
 			{
-				if (j * 32 < hero->GetX() && (j + 1) * 32 >= hero->GetX())
+				if (j * 32 < hero->GetX()+16 && (j + 1) * 32 > hero->GetX()+16)
 				{
 					py = i * 32;
-					px = (j + 1) * 32;
+					px = j * 32;
 				}
 			}
 		}
@@ -65,14 +67,34 @@ void CObjBlock::Draw()
 
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-	if (Input::GetVKey('C') == true)
+	if (Input::GetVKey('C') == true && push_flag == true)
 	{
-		if (hero->Getbubble() == true)
+		if (hero->Getbubble()>0)
 		{
-			m_map[py / 32][(px / 32) + 1] = 6;
-			hero->Setbubble();
-		}
+			if (hero->Getpos() == 1.0f)
+			{
+				if (m_map[py / 32][(px / 32) + 1] != 1&& m_map[py / 32][(px / 32) + 1] != 6)
+				{
+					m_map[py / 32][(px / 32) + 1] = 6;
+					hero->Setbubble();
+					push_flag = false;
+				}
+			}
+			if (hero->Getpos() == 0.0f)
+			{
+				if (m_map[py / 32][(px / 32) - 1] != 1&& m_map[py / 32][(px / 32) - 1] != 6)
+				{
+					m_map[py / 32][(px / 32) - 1] = 6;
+						hero->Setbubble();
+						push_flag = false;
+				}
+			}
 		
+		}
+	}
+	if (Input::GetVKey('C') == false)
+	{
+		push_flag = true;
 	}
 	//マップチップによるblock設置
 	for (int i = 0; i < 20; i++)
@@ -146,12 +168,17 @@ void CObjBlock::Draw()
 					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
 
+				//泡
 				if (m_map[i][j] == 6)
 				{
-					
-					BlockDraw(64.0f, 0.0f, &dst, c);
+					src.m_top = 0.0f;
+					src.m_left = 0.0f;
+					src.m_right = src.m_left + 64.0f;
+					src.m_bottom = src.m_top + 64.0f;
+				
+					BlockDraw(0.0f, 0.0f, &dst, c);
 					//描画
-					Draw::Draw(3, &src, &dst, c, 0.0f);
+					Draw::Draw(5, &src, &dst, c, 0.0f);
 				}
 				if (m_map[i][j] == 7)
 				{

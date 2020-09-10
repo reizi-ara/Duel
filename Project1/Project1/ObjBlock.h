@@ -62,4 +62,5 @@ private:
 	int px;
 	int py;
 
+	bool push_flag;
 };

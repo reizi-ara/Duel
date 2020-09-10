@@ -32,9 +32,10 @@ public:
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
 
-	void Getflag(bool f) { flagb = f; }
-	bool Getbubble() { return flagb; }
-	void Setbubble() { flagb = false; }
+	void Getflag(int f) { flagb += f; }
+	int Getbubble() { return flagb; }
+	void Setbubble() { flagb -= 1; }
+	float Getpos() { return m_posture; }
 
 private:
 	float m_px;         //位置
@@ -51,7 +52,7 @@ private:
 	float m_speed_power;   //スピードパワー
 	float m_ani_max_time;//アニメーション間隔幅
 
-	bool flagb;
+	int flagb;
 	bool flagw;
 
 	bool push;
@@ -69,4 +70,6 @@ private:
 	float px, py;  //交点
 
 	int m_map;
+
+
 };
