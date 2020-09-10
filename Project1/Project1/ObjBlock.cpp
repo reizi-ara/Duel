@@ -127,7 +127,7 @@ void CObjBlock::Draw()
 				
 				if (m_map[i][j] == 4)
 				{
-					
+					;
 
 
 					
