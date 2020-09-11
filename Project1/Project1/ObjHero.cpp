@@ -79,6 +79,13 @@ void CObjHero::Action()
 		Objs::InsertObj(obj_w, OBJ_ITEM, 2);
 	}
 
+	//Gキー入力でゲームオーバーゲームオーバーに移行
+	if (Input::GetVKey('G') == true)
+	{
+		
+		Scene::SetScene(new CSceneGameOver(m_map));
+	}
+
 	//キーの入力方向
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{

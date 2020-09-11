@@ -155,7 +155,9 @@
     <ClCompile Include="SceneMain3.cpp" />
     <ClCompile Include="SceneMain4.cpp" />
     <ClCompile Include="SceneMain5.cpp" />
+    <ClCompile Include="SceneSetumei.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Setumei.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -187,7 +189,9 @@
     <ClInclude Include="SceneMain3.h" />
     <ClInclude Include="SceneMain4.h" />
     <ClInclude Include="SceneMain5.h" />
+    <ClInclude Include="SceneSetumei.h" />
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Setumei.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

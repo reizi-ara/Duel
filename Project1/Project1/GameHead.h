@@ -66,6 +66,7 @@ struct UserData
 #include "ObjGameOver.h"
 #include "ObjClear.h"
 #include "ObjBubbleRide.h"
+#include "Setumei.h"
 
 
 //------------------------------------------------
@@ -77,6 +78,7 @@ struct UserData
 #include"SceneMain4.h"
 #include"SceneMain5.h"
 #include "SceneTitle.h"
+#include "SceneSetumei.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
 //-----------------------------------------------

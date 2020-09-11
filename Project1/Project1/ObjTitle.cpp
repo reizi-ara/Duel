@@ -22,7 +22,7 @@ void CObjTitle::Action()
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneMain(1));
+			Scene::SetScene(new CSceneSetumei());
 			m_key_flag = false;
 		}
 	}
@@ -36,7 +36,9 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"泡道", 200,120, 200, c);
-	Font::StrDraw(L"Enterキーを押してね", 220, 530, 40, c);
+	Font::StrDraw(L"泡道", 200,100, 200, c);
+
+	float s[4] = { 0.0f,1.0f,0.0f,1.0f };
+	Font::StrDraw(L"Enterキーを押してね!", 150, 500, 50, s);
 
 }

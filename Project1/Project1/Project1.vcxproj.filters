@@ -132,6 +132,12 @@
     <ClCompile Include="SceneMain5.cpp">
       <Filter>ソース ファイル\stage5</Filter>
     </ClCompile>
+    <ClCompile Include="Setumei.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSetumei.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -223,6 +229,12 @@
     </ClInclude>
     <ClInclude Include="ObjBubbleRide.h">
       <Filter>ソース ファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="Setumei.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSetumei.h">
+      <Filter>ソース ファイル\タイトル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
