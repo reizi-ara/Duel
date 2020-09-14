@@ -41,8 +41,7 @@ void Setumei::Draw()
 	Font::StrDraw(L"←:左移動", 120, 150, 50, c);
 	Font::StrDraw(L"スペースキー:ジャンプ", 120, 200, 50, c);
 	Font::StrDraw(L"Cキー:泡生成アイテム使用",120,250,50,c);
-	Font::StrDraw(L"Vキー:水生成アイテム使用", 120, 300, 50, c);
-	Font::StrDraw(L"Gキー:リセット", 120, 350, 50, c);
+	Font::StrDraw(L"Gキー:リセット", 120, 300, 50, c);
 
 	float s[4] = { 0.0f,1.0f,0.0f,1.0f };
 	Font::StrDraw(L"Enterキーでゲームスタート！",60, 450, 50, s);
